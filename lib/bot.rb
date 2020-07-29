@@ -25,11 +25,13 @@ class Bot
         when 'time'
           bot.api.send_message(
             chat_id: message.chat.id,
-            text: Formatter.format_response('time', nil, message.from.first_name, message.from.last_name))
+            text: Formatter.format_response('time', nil, message.from.first_name, message.from.last_name)
+          )
         when 'date'
           bot.api.send_message(
             chat_id: message.chat.id,
-            text: Formatter.format_response('date', nil, message.from.first_name, message.from.last_name))
+            text: Formatter.format_response('date', nil, message.from.first_name, message.from.last_name)
+          )
         else
           bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type help and hit send for more info')
         end

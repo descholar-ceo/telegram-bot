@@ -7,9 +7,9 @@ class Formatter
     when 'word'
       "Today\'s word of bravity is:\n\n#{res_object['text']}\n\nAuthor:\t#{res_object['author']}"
     when 'time'
-        "Hello #{fname} #{lname},\nThe current time is #{current_date_time.strftime('%I:%M %p')}"
+      "Hello #{fname} #{lname},\nThe current time is #{current_date_time.strftime('%I:%M %p')}"
     when 'date'
-        "Hello #{fname} #{lname},\nThe current date is #{current_date_time.strftime('%a, %B %d, %Y')}"
+      "Hello #{fname} #{lname},\nThe current date is #{current_date_time.strftime('%a, %B %d, %Y')}"
     end
   end
 end
