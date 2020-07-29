@@ -16,11 +16,11 @@ class Bot
         when 'quote'
           quote_obj = LookUp.new('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
           my_quote = quote_obj.read
-          bot.api.send_message(chat_id: message.chat.id, text: my_quote.to_s)
+          bot.api.send_message(chat_id: message.chat.id, text: "#{my_quote['en']}")
         when 'word'
           quote_obj = LookUp.new('https://type.fit/api/quotes')
           my_word = quote_obj.read
-          bot.api.send_message(chat_id: message.chat.id, text: my_word.to_s)
+          bot.api.send_message(chat_id: message.chat.id, text: "#{my_word['text']}")
         when 'time'
           current_date_time = Time.new
           bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name},\nThe current time is #{current_date_time.strftime('%I:%M %p')}")
@@ -28,7 +28,7 @@ class Bot
           current_date_time = Time.new
           bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name},\nThe current date is #{current_date_time.strftime('%a, %B %d, %Y')}")
         else
-          bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type /help and hit send for more info')
+          bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type help and hit send for more info')
         end
       end
     end
