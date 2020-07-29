@@ -1,6 +1,4 @@
 require 'telegram/bot'
-require_relative 'quotes'
-require_relative 'word-of-day'
 require_relative 'lookup'
 
 # Bot class
