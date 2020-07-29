@@ -1,6 +1,7 @@
 require 'telegram/bot'
 require_relative 'lookup'
 require_relative 'formatter'
+require_relative 'messages'
 
 # Bot class
 class Bot
@@ -11,9 +12,9 @@ class Bot
       bot.listen do |message|
         case message.text.downcase
         when 'start'
-          bot.api.send_message(chat_id: message.chat.id, text: 'Hello! From nezabot')
+          bot.api.send_message(chat_id: message.chat.id, text: Messages::WELCOME_MSG)
         when 'help'
-          bot.api.send_message(chat_id: message.chat.id, text: 'That is the list of help')
+          bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
         when 'quote'
           quote_obj = LookUp.new('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
           my_quote = quote_obj.read
@@ -33,7 +34,7 @@ class Bot
             text: Formatter.format_response('date', nil, message.from.first_name, message.from.last_name)
           )
         else
-          bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type help and hit send for more info')
+          bot.api.send_message(chat_id: message.chat.id, text: Messages::BAD_COMMAND)
         end
       end
     end
