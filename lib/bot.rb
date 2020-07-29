@@ -22,12 +22,12 @@ class Bot
     when 'help'
       bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
     else
-      other_cases(message.text.downcase)
+      other_cases(message, bot)
     end
   end
 
-  def other_cases(message)
-    case message
+  def other_cases(message, bot)
+    case message.text.downcase
     when 'quote'
       quote_obj = LookUp.new(Configs::PROGRAMMING_QUOTE_API)
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('quote', quote_obj.read).to_s)
