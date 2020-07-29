@@ -16,6 +16,7 @@ jobs:
           [ -f Gemfile ] && bundle --deployment
           gem install --no-document rspec:'~>3.0'
           gem install dotenv
+          gem install telegram-bot-ruby
       - name: RSpec Report
         env:
           PROGRAMMING_QUOTE_API: ${{ secrets.PROGRAMMING_QUOTE_API }}
