@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/bot.rb'
+require_relative '../lib/constants'
+require_relative '../lib/bot'
 
-puts 'Hi there! This is NezaBot, welcome to the new world of info!'
-puts 'I am sure you will enjoy staying with us'
-puts 'Use ctrl-c to stop the bot'
+puts Messages::BOT_COMMAND_LINE_MSG
+
 Bot.new
