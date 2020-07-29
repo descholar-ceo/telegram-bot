@@ -16,4 +16,9 @@ jobs:
           [ -f Gemfile ] && bundle --deployment
           gem install --no-document rspec:'~>3.0'
       - name: RSpec Report
+        env:
+          env:
+            PROGRAMMING_QUOTE_API: ${{ secrets.PROGRAMMING_QUOTE_API }}
+            WORD_OF_DAY_API: ${{ secrets.WORD_OF_DAY_API }}
+            TELEGRAM_BOT_API_TOKEN: ${{ secrets.TELEGRAM_BOT_API_TOKEN }}
         run: rspec --force-color --format documentation
