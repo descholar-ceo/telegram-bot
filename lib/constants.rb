@@ -34,8 +34,7 @@ end
 module TestMockData
   SAMPLE_QUOTE_TO_USER = "Today\'s Programming quote is:\n
 Once a new technology starts rolling, if you’re not part of the steamroller, you’re part of the road.
-\nAuthor:\tStewart Brand
-  ".freeze
+\nAuthor:\tStewart Brand".freeze
 
   SAMPLE_WORD_TO_USER = "Today\'s word of bravity is:\n
 You give before you get.
@@ -51,4 +50,7 @@ You give before you get.
     'text' => 'You give before you get.',
     'author' => 'Confucius'
   }.freeze
+
+  SAMPLE_DATE = "Hello neza bot,\nThe current date is Wed, July 29, 2020"
+  SAMPLE_TIME = "Hello neza bot,\nThe current time is 10:26 PM"
 end

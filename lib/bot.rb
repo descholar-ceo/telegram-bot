@@ -35,12 +35,16 @@ class Bot
       word_obj = LookUp.new(Configs::WORD_OF_DAY_API)
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', word_obj.read).to_s)
     when 'time'
+      date_time = Time.new
+      puts date_time
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
-        'time', nil, message.from.first_name, message.from.last_name
+        'time', nil, message.from.first_name, message.from.last_name, date_time
       ))
     when 'date'
+      date_time = Time.new
+      puts date_time
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
-        'date', nil, message.from.first_name, message.from.last_name
+        'date', nil, message.from.first_name, message.from.last_name, date_time
       ))
     else
       bot.api.send_message(chat_id: message.chat.id, text: Messages::BAD_COMMAND)
