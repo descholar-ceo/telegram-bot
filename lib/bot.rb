@@ -23,22 +23,18 @@ class Bot
       bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
     when 'quote'
       quote_obj = LookUp.new(Configs::PROGRAMMING_QUOTE_API)
-      my_quote = quote_obj.read
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('quote', my_quote).to_s)
+      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('quote', quote_obj.read).to_s)
     when 'word'
-      quote_obj = LookUp.new(Configs::WORD_OF_DAY_API)
-      my_word = quote_obj.read
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', my_word).to_s)
+      word_obj = LookUp.new(Configs::WORD_OF_DAY_API)
+      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', word_obj.read).to_s)
     when 'time'
-      bot.api.send_message(
-        chat_id: message.chat.id,
-        text: Formatter.format_response('time', nil, message.from.first_name, message.from.last_name)
-      )
+      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
+        'time', nil, message.from.first_name, message.from.last_name
+      ))
     when 'date'
-      bot.api.send_message(
-        chat_id: message.chat.id,
-        text: Formatter.format_response('date', nil, message.from.first_name, message.from.last_name)
-      )
+      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
+        'date', nil, message.from.first_name, message.from.last_name
+      ))
     else
       bot.api.send_message(chat_id: message.chat.id, text: Messages::BAD_COMMAND)
     end
