@@ -1,14 +1,12 @@
 require 'telegram/bot'
 require_relative 'lookup'
 require_relative 'formatter'
-require_relative 'messages'
+require_relative 'constants'
 
 # Bot class
 class Bot
   def initialize
-    api_key = '1329880993:AAH7I_sHE8zD_cswXoHO0ksSEte0i-upM2s'
-
-    Telegram::Bot::Client.run(api_key) do |bot|
+    Telegram::Bot::Client.run(Configs::BASE_API_KEY) do |bot|
       bot.listen do |message|
         case message.text.downcase
         when 'start'
@@ -16,11 +14,11 @@ class Bot
         when 'help'
           bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
         when 'quote'
-          quote_obj = LookUp.new('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
+          quote_obj = LookUp.new(Configs::PROGRAMMING_QUOTE_API)
           my_quote = quote_obj.read
           bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('quote', my_quote).to_s)
         when 'word'
-          quote_obj = LookUp.new('https://type.fit/api/quotes')
+          quote_obj = LookUp.new(Configs::WORD_OF_DAY_API)
           my_word = quote_obj.read
           bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', my_word).to_s)
         when 'time'
