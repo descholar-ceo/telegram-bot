@@ -1,5 +1,6 @@
 require 'telegram/bot'
 require_relative 'lookup'
+require_relative 'formatter'
 
 # Bot class
 class Bot
@@ -16,11 +17,11 @@ class Bot
         when 'quote'
           quote_obj = LookUp.new('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
           my_quote = quote_obj.read
-          bot.api.send_message(chat_id: message.chat.id, text: "#{my_quote['en']}")
+          bot.api.send_message( chat_id: message.chat.id, text: "#{Formatter.format_response('quote',my_quote)}")
         when 'word'
           quote_obj = LookUp.new('https://type.fit/api/quotes')
           my_word = quote_obj.read
-          bot.api.send_message(chat_id: message.chat.id, text: "#{my_word['text']}")
+          bot.api.send_message(chat_id: message.chat.id, text: "#{Formatter.format_response('word',my_word)}")
         when 'time'
           current_date_time = Time.new
           bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name},\nThe current time is #{current_date_time.strftime('%I:%M %p')}")
