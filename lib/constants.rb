@@ -20,9 +20,19 @@ module Messages
   you can contact him on emmamugira@gmail.com, for idea, feature request, or bug fix!
 
   ".freeze
-  WELCOME_MSG = 'Hello! From nezabot'.freeze
+  WELCOME_MSG = "\n\t\t\t\t\t\tHello! This is NezaBot!
+  \t\t\t\t=======================
+
+  I am not a human, I am just a bot. You can send me your request and I will send you a response.
+  So far I am able to find the following:
+
+  \n\t\t\t\t=>Programming quote : send me 'quote' as a message
+  \n\t\t\t\t=>Word of bravity : send me 'word' as a message
+  \n\t\t\t\t=>Current time : send me 'time' as a message
+  \n\t\t\t\t=>Current date : send me 'date' as a message".freeze
   HELP_MESSAGE = 'That is the list of help'.freeze
-  BAD_COMMAND = 'Sorry! Invalid input, type help and hit send for more info'.freeze
+  BAD_COMMAND = 'Sorry! I am not yet familiar with that term, please send me `help` as a message, if you
+think that you forgot how to benefit from me!'.freeze
 end
 
 module Configs
