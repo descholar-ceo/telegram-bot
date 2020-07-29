@@ -1,7 +1,8 @@
+#!/usr/bin/env ruby
+
 require_relative '../lib/bot.rb'
 
-puts 'Hi there! This NezaBot, welcome to the new world of info!'
-sleep(0.6)
+puts 'Hi there! This is NezaBot, welcome to the new world of info!'
 puts 'I am sure you will enjoy staying with us'
-puts '...loading the bot is now online... use ctrl-c to stop the bot'
+puts 'Use ctrl-c to stop the bot'
 Bot.new
