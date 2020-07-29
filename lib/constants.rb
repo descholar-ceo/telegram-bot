@@ -30,3 +30,25 @@ module Configs
   PROGRAMMING_QUOTE_API = ENV['PROGRAMMING_QUOTE_API']
   WORD_OF_DAY_API = ENV['WORD_OF_DAY_API']
 end
+
+module TestMockData
+  SAMPLE_QUOTE_TO_USER = "Today\'s Programming quote is:\n
+Once a new technology starts rolling, if you’re not part of the steamroller, you’re part of the road.
+\nAuthor:\tStewart Brand
+  ".freeze
+
+  SAMPLE_WORD_TO_USER = "Today\'s word of bravity is:\n
+You give before you get.
+\nAuthor:\tConfucius".freeze
+
+  SAMPLE_QUOTE_FROM_INTERNET = {
+    '_id' => '5a6ce86f2af929789500e83d',
+    'en' => 'Once a new technology starts rolling, if you’re not part of the steamroller, you’re part of the road.',
+    'author' => 'Stewart Brand', 'rating' => 2.9, 'id' => '5a6ce86f2af929789500e83d'
+  }.freeze
+
+  SAMPLE_WORD_FROM_INTERNET = {
+    'text' => 'You give before you get.',
+    'author' => 'Confucius'
+  }.freeze
+end
