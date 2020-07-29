@@ -1,7 +1,6 @@
 require 'telegram/bot'
 require_relative 'quotes'
 require_relative 'word-of-day'
-require_relative 'city-info'
 
 # Bot class
 class Bot
@@ -9,8 +8,8 @@ class Bot
     api_key = '1329880993:AAH7I_sHE8zD_cswXoHO0ksSEte0i-upM2s'
 
     Telegram::Bot::Client.run(api_key) do |bot|
+        current_date_time = Time.new
       bot.listen do |message|
-        city_regex = message.text.match(/^city (?<{city_name}>\w*)$/)
         case message.text
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: 'Hello! From nezabot')
@@ -26,10 +25,10 @@ class Bot
           bot.api.send_message(chat_id: message.chat.id, text: my_word.to_s)
         when 'name'
           bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name}")
-        when city_regex
-          my_city = CityInfo.new
-          my_city = my_city.select_random
-          bot.api.send_message(chat_id: message.chat.id, text: my_city.to_s)
+        when 'time'
+            bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name},\nThe current time is #{current_date_time.strftime('%I:%M %p')}")
+        when 'date'
+            bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name},\nThe current date is #{current_date_time.strftime('%a, %B %d, %Y')}")
         else
           bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type /help and hit send for more info')
         end
