@@ -36,13 +36,11 @@ class Bot
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', word_obj.read).to_s)
     when 'time'
       date_time = Time.new
-      puts date_time
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
         'time', nil, message.from.first_name, message.from.last_name, date_time
       ))
     when 'date'
       date_time = Time.new
-      puts date_time
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
         'date', nil, message.from.first_name, message.from.last_name, date_time
       ))

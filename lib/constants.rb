@@ -51,6 +51,6 @@ You give before you get.
     'author' => 'Confucius'
   }.freeze
 
-  SAMPLE_DATE = "Hello neza bot,\nThe current date is Wed, July 29, 2020"
-  SAMPLE_TIME = "Hello neza bot,\nThe current time is 10:26 PM"
+  SAMPLE_DATE = "Hello neza bot,\nThe current date is Wed, July 29, 2020".freeze
+  SAMPLE_TIME = "Hello neza bot,\nThe current time is 10:26 PM".freeze
 end
