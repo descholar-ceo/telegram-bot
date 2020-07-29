@@ -11,9 +11,9 @@ class Bot
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: 'Hello! From nezabot')
         when '/help'
-            bot.api.send_message(chat_id: message.chat.id, text: 'That is the list of help')
+          bot.api.send_message(chat_id: message.chat.id, text: 'That is the list of help')
         else
-            bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type /help and hit send for more info')
+          bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type /help and hit send for more info')
         end
       end
     end
