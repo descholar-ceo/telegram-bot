@@ -17,19 +17,19 @@ class Bot
         when '/help'
           bot.api.send_message(chat_id: message.chat.id, text: 'That is the list of help')
         when 'quote'
-            my_quote = Quotes.new
-            my_quote = my_quote.select_random
-            bot.api.send_message(chat_id: message.chat.id, text:"#{my_quote}")
+          my_quote = Quotes.new
+          my_quote = my_quote.select_random
+          bot.api.send_message(chat_id: message.chat.id, text: my_quote.to_s)
         when 'word'
-            my_word = Word.new
-            my_word = my_word.select_random
-            bot.api.send_message(chat_id: message.chat.id, text:"#{my_word}")
+          my_word = Word.new
+          my_word = my_word.select_random
+          bot.api.send_message(chat_id: message.chat.id, text: my_word.to_s)
         when 'name'
-            bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name}")
+          bot.api.send_message(chat_id: message.chat.id, text: "Hello #{message.from.first_name} #{message.from.last_name}")
         when city_regex
-            my_city = CityInfo.new
-            my_city = my_city.select_random
-            bot.api.send_message(chat_id: message.chat.id, text:"#{my_city}")
+          my_city = CityInfo.new
+          my_city = my_city.select_random
+          bot.api.send_message(chat_id: message.chat.id, text: my_city.to_s)
         else
           bot.api.send_message(chat_id: message.chat.id, text: 'Sorry! Invalid input, type /help and hit send for more info')
         end
