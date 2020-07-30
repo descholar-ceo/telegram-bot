@@ -55,7 +55,7 @@ class Bot
     elsif message.text.downcase.start_with? 'covid/'
       country_arr = message.text.downcase.split '/'
       country = country_arr[1]
-      covid_obj = LookUp.new("https://covid-193.p.rapidapi.com/statistics?country=#{country}", 'covid')
+      covid_obj = LookUp.new("#{Configs::COVID_API_URL}?country=#{country}", 'covid')
       bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
         'covid', covid_obj.read, message.from.first_name, message.from.last_name
       ).to_s)

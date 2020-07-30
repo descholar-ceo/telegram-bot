@@ -2,6 +2,7 @@ require 'net/http'
 require 'json'
 require 'uri'
 require 'openssl'
+require_relative 'constants'
 
 # LookUp class in charge of looking up online
 class LookUp
@@ -12,10 +13,9 @@ class LookUp
       http = Net::HTTP.new(URI(url).host, URI(url).port)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
       req = Net::HTTP::Get.new(URI(url))
-      req['x-rapidapi-host'] = 'covid-193.p.rapidapi.com'
-      req['x-rapidapi-key'] = 'bb3ebde477msh2bc5f9123f0cc95p1d6922jsn4f0b847ad367'
+      req['x-rapidapi-host'] = Configs::COVID_API_HOST
+      req['x-rapidapi-key'] = Configs::COVID_API_KEY
 
       @res = http.request(req).read_body
     else

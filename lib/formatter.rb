@@ -18,13 +18,13 @@ class Formatter
       return Messages::COVID_STATS_NOT_FOUND if res.length.zero?
 
       general = res[0]
-      cases = general['cases']
-      format_covid(cases, fname, lname)
+      deaths = general['deaths']['total']
+      format_covid(general, deaths, fname, lname)
     end
   end
 
-  def self.format_covid(general, fname, lname)
-    deaths = general['deaths']['total']
+  def self.format_covid(general, deaths, fname, lname)
+    cases = general['cases']
     date = general['day']
     continent = general['continent']
     country = general['country']
