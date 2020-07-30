@@ -6,6 +6,7 @@ describe LookUp do
     let(:lookup_word) { LookUp.new(Configs::WORD_OF_DAY_API) }
     let(:lookup_quote) { LookUp.new(Configs::PROGRAMMING_QUOTE_API) }
     let(:lookup_covid) { LookUp.new("#{Configs::COVID_API_URL}?country=rwanda", 'covid') }
+    let(:lookup_covid_no_result) { LookUp.new("#{Configs::COVID_API_URL}?country=ruby_is_such_great", 'covid') }
     it 'word link is given, hash' do
       expect(lookup_word.read).to be_kind_of(Hash)
     end
@@ -44,6 +45,12 @@ describe LookUp do
     end
     it 'covid link is given, key response value is array' do
       expect(lookup_covid.read['response']).to be_kind_of(Array)
+    end
+    it 'covid link is given, key response value is array not empty' do
+      expect(lookup_covid.read['response'].length).not_to eql(0)
+    end
+    it 'covid link is given, no result' do
+      expect(lookup_covid_no_result.read['response'].length).to eql(0)
     end
   end
 end
