@@ -15,7 +15,7 @@ class Formatter
       "Hello #{fname} #{lname},\nThe current time is #{date_time.strftime('%I:%M %p')}"
     when 'covid'
       res = res_object['response']
-      return Messages::COVID_STATS_NOT_FOUND if res.length.zero?
+      # return Messages::COVID_STATS_NOT_FOUND if res.length.zero? or res.nil?
 
       general = res[0]
       deaths = general['deaths']['total']
