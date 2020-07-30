@@ -13,6 +13,8 @@ module Messages
   \n\t\t\t\t=>Word of bravity : user has to send me 'word' as a message
   \n\t\t\t\t=>Current time : user has to send me 'time' as a message
   \n\t\t\t\t=>Current date : user has to send me 'date' as a message
+  \n\t\t\t\t=>Covid statistics : send me 'covid/<name_of_country>' replace <name_of_country>
+  with the country name you want to read statistics. eg: covid/usa
 
   If you want me to stop, you can press Ctrl + C (Windows / Linux), or Command + C (MacOS)
 
@@ -21,7 +23,7 @@ module Messages
 
   ".freeze
   WELCOME_MSG = "\n\t\t\t\t\t\tHello! This is NezaBot!
-  \t\t\t\t=======================
+  \t\t\t\t================
 
   I am not a human, I am just a bot. You can send me your request and I will send you a response.
   So far I am able to find the following:
@@ -29,8 +31,24 @@ module Messages
   \n\t\t\t\t=>Programming quote : send me 'quote' as a message
   \n\t\t\t\t=>Word of bravity : send me 'word' as a message
   \n\t\t\t\t=>Current time : send me 'time' as a message
-  \n\t\t\t\t=>Current date : send me 'date' as a message".freeze
-  HELP_MESSAGE = 'That is the list of help'.freeze
+  \n\t\t\t\t=>Current date : send me 'date' as a message
+  \n\t\t\t\t=>Covid statistics : send me 'covid/<name_of_country>' replace <name_of_country>
+  with the country name you want to read statistics. eg: covid/usa
+  
+  I am developed by MUGIRASE Emmanuel, you can contact him on emmamugira@gmail.com".freeze
+  HELP_MESSAGE = 'Send me one of the following message, (I call them commands),
+  I will reply you with the response specified next to every message:
+  
+  1. message : start    =>  response : Greeting and introduction
+  2. message : help     =>  response : List of all available messages (commands)
+  3. message : word     =>  response : Word of bravity of the day
+  4. message : quote    =>  response : Today\'s programming quote
+  5. message : time     =>  response : To get current time
+  6. message : date     =>  response : To get current date
+  7. message : covid/<name_of_country   =>  response : To read covid-19 statistics of any country 
+  "remember to replace <name_of_country> with the country name you want to read its statistics,
+  example: covid/usa"
+  '.freeze
   BAD_COMMAND = 'Sorry! I am not yet familiar with that term, please send me `help` as a message, if you
 think that you forgot how to benefit from me!'.freeze
   BAD_COVID_MSG = 'Sorry! If you are looking for covid statistics, use this format: covid/name_of_country'.freeze
