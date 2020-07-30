@@ -44,5 +44,14 @@ To be able to setup and run this product, you should have the following
 11. Once you found it, click on `START` button, and start chatting with it, in last step, I will show you the list of commands the bot can understand so far
 #### 12. List of messages (commands) current this bot will respond to
 ```bash
-1. /start
+1. message : start    =>  response : Greeting and introduction
+  2. message : help     =>  response : List of all available messages (commands)
+  3. message : word     =>  response : Word of bravity of the day
+  4. message : quote    =>  response : Today programming quote
+  5. message : time     =>  response : To get current time
+  6. message : date     =>  response : To get current date
+  7. message : covid/<name_of_country   =>  response : To read covid-19 statistics of any country
+  
+  ===>remember to replace <name_of_country> with the country name you want to read its statistics,
+  example: covid/usa
 ``` 
