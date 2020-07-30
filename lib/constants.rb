@@ -37,7 +37,8 @@ think that you forgot how to benefit from me!'.freeze
   BAD_COVID_MSG_SENT_COVID_ONLY = 'Please tell me the country from which you need to get statistics,
   use this format: covid/name_of_country'.freeze
   COVID_STATS_NOT_FOUND = 'Sorry! It looks like I did not find any statistic about the country you gave me,
-  please, make sure that you spelled well the country name and try again, remember to use this format: covid/country_name'
+  please, make sure that you spelled well the country name and try again,
+  remember to use this format: covid/country_name'.freeze
 end
 
 module Configs
