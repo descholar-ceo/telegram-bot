@@ -15,10 +15,11 @@ Here, `telegram-bot` comes in as a solution. It provides very easy way of access
 
 ## Screenshots
 |`/stat`|`/help`|`quote`|
-|-|-|-|-|-|
+|-|-|-|
 |![](assets/start-command.png)|![](assets/help-commands.png)|![](assets/quote-command.png)|
 
 |`word`|`covid/usa`|`date`|
+|-|-|-|
 ![](assets/word-command.png)|![](assets/covid-command.png)|![](assets/date-command.png)
 
 
