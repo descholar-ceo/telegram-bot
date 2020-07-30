@@ -3,21 +3,47 @@ require_relative '../lib/lookup'
 
 describe LookUp do
   describe '#read' do
-    let(:lookup) { LookUp.new(Configs::WORD_OF_DAY_API) }
-    it 'When a link is given, hash' do
-      expect(lookup.read).to be_kind_of(Hash)
+    let(:lookup_word) { LookUp.new(Configs::WORD_OF_DAY_API) }
+    let(:lookup_quote) { LookUp.new(Configs::PROGRAMMING_QUOTE_API) }
+    let(:lookup_covid) { LookUp.new("#{Configs::COVID_API_URL}?country=rwanda", 'covid') }
+    it 'word link is given, hash' do
+      expect(lookup_word.read).to be_kind_of(Hash)
     end
-    it 'When a link is given, key text' do
-      expect(lookup.read).to have_key('text')
+    it 'word link is given, key text' do
+      expect(lookup_word.read).to have_key('text')
     end
-    it 'When a link is given, key author' do
-      expect(lookup.read).to have_key('author')
+    it 'word link is given, key author' do
+      expect(lookup_word.read).to have_key('author')
     end
-    it 'When a link is given, value of text is a string' do
-      expect(lookup.read['text']).to be_kind_of(String)
+    it 'word link is given, value of text is a string' do
+      expect(lookup_word.read['text']).to be_kind_of(String)
     end
-    it 'When a link is given, value of author is a string' do
-      expect(lookup.read['author']).to be_kind_of(String)
+    it 'word link is given, value of author is a string' do
+      expect(lookup_word.read['author']).to be_kind_of(String)
+    end
+    it 'quote link is given, hash' do
+      expect(lookup_quote.read).to be_kind_of(Hash)
+    end
+    it 'quote link is given, key en' do
+      expect(lookup_quote.read).to have_key('en')
+    end
+    it 'quote link is given, key author' do
+      expect(lookup_quote.read).to have_key('author')
+    end
+    it 'quote link is given, value of en is a string' do
+      expect(lookup_quote.read['en']).to be_kind_of(String)
+    end
+    it 'quote link is given, value of author is a string' do
+      expect(lookup_quote.read['author']).to be_kind_of(String)
+    end
+    it 'covid link is given, hash' do
+      expect(lookup_covid.read).to be_kind_of(Hash)
+    end
+    it 'covid link is given, key response' do
+      expect(lookup_covid.read).to have_key('response')
+    end
+    it 'covid link is given, key response value is array' do
+      expect(lookup_covid.read['response']).to be_kind_of(Array)
     end
   end
 end
