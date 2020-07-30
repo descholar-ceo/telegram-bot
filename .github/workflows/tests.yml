@@ -22,4 +22,7 @@ jobs:
           PROGRAMMING_QUOTE_API: ${{ secrets.PROGRAMMING_QUOTE_API }}
           WORD_OF_DAY_API: ${{ secrets.WORD_OF_DAY_API }}
           TELEGRAM_BOT_API_TOKEN: ${{ secrets.TELEGRAM_BOT_API_TOKEN }}
+          COVID_API_HOST: ${{ secrets.COVID_API_HOST }}
+          COVID_API_KEY: ${{ secrets.COVID_API_KEY }}
+          COVID_API_URL: ${{ secrets.COVID_API_URL }}
         run: rspec --force-color --format documentation
