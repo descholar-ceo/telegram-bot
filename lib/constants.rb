@@ -34,18 +34,18 @@ module Messages
   \n\t\t\t\t=>Current date : send me 'date' as a message
   \n\t\t\t\t=>Covid statistics : send me 'covid/<name_of_country>' replace <name_of_country>
   with the country name you want to read statistics. eg: covid/usa
-  
+
   I am developed by MUGIRASE Emmanuel, you can contact him on emmamugira@gmail.com".freeze
   HELP_MESSAGE = 'Send me one of the following message, (I call them commands),
   I will reply you with the response specified next to every message:
-  
+
   1. message : start    =>  response : Greeting and introduction
   2. message : help     =>  response : List of all available messages (commands)
   3. message : word     =>  response : Word of bravity of the day
   4. message : quote    =>  response : Today\'s programming quote
   5. message : time     =>  response : To get current time
   6. message : date     =>  response : To get current date
-  7. message : covid/<name_of_country   =>  response : To read covid-19 statistics of any country 
+  7. message : covid/<name_of_country   =>  response : To read covid-19 statistics of any country
   "remember to replace <name_of_country> with the country name you want to read its statistics,
   example: covid/usa"
   '.freeze
