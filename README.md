@@ -9,3 +9,40 @@ Here, `nezabot` comes in as a solution. It provides very easy way of accessing t
 
 ## Description
 `nezabot` is a telegram-bot, this means you access it via [Telegram messenger](https://telegram.org/). It is built to make your life easy, don't spend your time looking for links where you can find current **covid statistics**, with a single message you send it via your **messenger chat**, it will pull information from online and brings you the solution. I will list other usefull solutions it brings you.
+
+## Buit with
+* [Ruby](https://www.ruby-lang.org/en/)
+
+## Setup
+To be able to use this `nezabot` follow the following steps
+
+### Pre-requisites:
+To be able to setup and run this product, you should have the following
+1. [Ruby](https://www.ruby-lang.org/en/) installed on your computer
+1. [Telegram account](https://telegram.org/)
+1. Computer ready to run `terminal`, or `bash`
+
+### Installation:
+1. Clone, go in this repo by running `git clone https://github.com/descholar-ceo/telegram-bot.git && cd telegram-bot`
+2. Create a file and name it `.env` in root directory of this project
+3. Copy all of the fields which are in `.env.example` file you from the root directory => in next steps I will show you how you are going to get the values of those fields 
+4. Click [here](https://t.me/BotFather) or go to your telegram and search for `@BotFather` and send him this message: `/newbot` and follow instruction untill you get your bot api token which appears to look like this: `123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11`
+5. Copy it and paste it on the first field in your `.env` file, (that field is `TELEGRAM_BOT_API_TOKEN=`)
+6. Go to [RapidApi](https://rapidapi.com/api-sports/api/covid-193?endpoint=apiendpoint_dfb9e52d-bd90-48ec-a571-8b78610a736d), Signup or signin, and get your `COVID_API_HOST, COVID_API_KEY` and `COVID_API_URL` from there. When you see the window which looks like the following on the screenshot, scroll down on the rightmost mindow, and copy the values of `request["x-rapidapi-host"]`: paste this value on `COVID_API_HOST` in your `.env` file, and copy the value of `request["x-rapidapi-key"]` and paste it on `COVID_API_KEY` in your `.env` file, last but not least for the `COVID_API_URL` use `https://covid-193.p.rapidapi.com/statistics`.
+![](assets/rapid-api-window-showcase.png)
+7. The remaining fields use the following values:
+```bash
+
+    i. WORD_OF_DAY_API=https://type.fit/api/quotes
+    ii. PROGRAMMING_QUOTE_API=https://programming-quotes-api.herokuapp.com/quotes/lang/en
+
+```
+8. Run `bundle install` => To install all required dependecies
+9. Run `bin/main.rb` => To start your `telegram-bot`. To this point you should see in your terminal a window which looks like the following on the screenshot:
+![](assets/telegram-bot-terminal-screen.png)
+10. Now your bot is alive and is able to follow the commands you give, go in your telegram messenger, and look for your bot, the bot name you provided to the botfather on step 4.
+11. Once you found it, click on `START` button, and start chatting with it, in last step, I will show you the list of commands the bot can understand so far
+#### 12. List of messages (commands) current this bot will respond to
+```bash
+1. /start
+``` 
