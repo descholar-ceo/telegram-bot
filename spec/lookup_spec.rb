@@ -1,5 +1,5 @@
-require_relative '../lib/constants'
-require_relative '../lib/lookup'
+require_relative '../lib/modules/constants'
+require_relative '../lib/helpers/lookup'
 
 describe LookUp do
   describe '#read' do

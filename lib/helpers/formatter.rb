@@ -1,4 +1,4 @@
-require_relative 'constants'
+require_relative '../modules/constants'
 # Formatter is in charge of all formatting reponses to user
 class Formatter
   def self.format_response(

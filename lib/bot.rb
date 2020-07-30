@@ -1,7 +1,7 @@
 require 'telegram/bot'
-require_relative 'lookup'
-require_relative 'formatter'
-require_relative 'constants'
+require_relative 'helpers/lookup'
+require_relative 'helpers/formatter'
+require_relative 'modules/constants'
 
 # Bot class
 class Bot

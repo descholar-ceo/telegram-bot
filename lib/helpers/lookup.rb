@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 require 'uri'
 require 'openssl'
-require_relative 'constants'
+require_relative '../modules/constants'
 
 # LookUp class in charge of looking up online
 class LookUp

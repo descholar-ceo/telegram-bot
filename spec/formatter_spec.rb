@@ -1,6 +1,6 @@
 require 'time'
-require_relative '../lib/formatter'
-require_relative '../lib/constants'
+require_relative '../lib/helpers/formatter'
+require_relative '../lib/modules/constants'
 
 describe Formatter do
   let(:word_res) do
