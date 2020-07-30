@@ -14,6 +14,9 @@ Here, `telegram-bot` comes in as a solution. It provides very easy way of access
 * [Ruby](https://www.ruby-lang.org/en/)
 
 ## Screenshots
+|/stat|/help|quote|word|covid/usa
+|-|-|-|-|-|
+|![](assets/start-command.png)|![](assets/help-commands.png)|![](assets/quote-command.png)|![](assets/word-command.png)|![](assets/covid-command.png)|
 
 
 ## Setup
