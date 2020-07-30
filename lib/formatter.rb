@@ -14,13 +14,17 @@ class Formatter
     when 'time'
       "Hello #{fname} #{lname},\nThe current time is #{date_time.strftime('%I:%M %p')}"
     when 'covid'
-      res = res_object['response']
-      # return Messages::COVID_STATS_NOT_FOUND if res.length.zero? or res.nil?
-
-      general = res[0]
-      deaths = general['deaths']['total']
-      format_covid(general, deaths, fname, lname)
+      covid_case(res_object, fname, lname)
     end
+  end
+
+  def self.covid_case(res_object, fname, lname)
+    res = res_object['response']
+    return Messages::COVID_STATS_NOT_FOUND if res.length.zero? or res.nil?
+
+    general = res[0]
+    deaths = general['deaths']['total']
+    format_covid(general, deaths, fname, lname)
   end
 
   def self.format_covid(general, deaths, fname, lname)
