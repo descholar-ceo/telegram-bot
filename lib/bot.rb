@@ -17,9 +17,9 @@ class Bot
 
   def cases(message, bot)
     case message.text.downcase
-    when 'start'
+    when '/start'
       bot.api.send_message(chat_id: message.chat.id, text: Messages::WELCOME_MSG)
-    when 'help'
+    when '/help'
       bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
     else
       other_cases(message, bot)

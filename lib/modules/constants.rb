@@ -39,8 +39,8 @@ module Messages
   HELP_MESSAGE = 'Send me one of the following message, (I call them commands),
   I will reply you with the response specified next to every message:
 
-  1. message : start    =>  response : Greeting and introduction
-  2. message : help     =>  response : List of all available messages (commands)
+  1. message : /start    =>  response : Greeting and introduction
+  2. message : /help     =>  response : List of all available messages (commands)
   3. message : word     =>  response : Word of bravity of the day
   4. message : quote    =>  response : Today\'s programming quote
   5. message : time     =>  response : To get current time
@@ -49,7 +49,7 @@ module Messages
   "remember to replace <name_of_country> with the country name you want to read its statistics,
   example: covid/usa"
   '.freeze
-  BAD_COMMAND = 'Sorry! I am not yet familiar with that term, please send me `help` as a message, if you
+  BAD_COMMAND = 'Sorry! I am not yet familiar with that term, please send me /help as a message, if you
 think that you forgot how to benefit from me!'.freeze
   BAD_COVID_MSG = 'Sorry! If you are looking for covid statistics, use this format: covid/name_of_country'.freeze
   BAD_COVID_MSG_SENT_COVID_ONLY = 'Please tell me the country from which you need to get statistics,
