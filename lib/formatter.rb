@@ -43,8 +43,6 @@ class Formatter
     Critical cases: #{critical_cases}
     Total recovered cases so far: #{recovered_cases}
     Total infected patients so far: #{total_cases}
-    Total deaths so far: #{deaths}\n
-    That is the update I got you so far.
-    I wish you to stay home, and stay safe!"
+    Total deaths so far: #{deaths}\n\nThat is the update I got you so far.\nI wish you to stay home, and stay safe!"
   end
 end
