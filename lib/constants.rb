@@ -72,4 +72,30 @@ You give before you get.
 
   SAMPLE_DATE = "Hello neza bot,\nThe current date is Wed, July 29, 2020".freeze
   SAMPLE_TIME = "Hello neza bot,\nThe current time is 10:26 PM".freeze
+
+  SAMPLE_COVID_STATS_FROM_INTERNET =
+    { 'get' => 'statistics',
+      'parameters' => { 'country' => 'uganda' }, 'errors' => [],
+      'results' => 1, 'response' => [{ 'continent' => 'Africa',
+                                       'country' => 'Uganda', 'population' => 45_836_124,
+                                       'cases' => { 'new' => '+7', 'active' => 117, 'critical' => 0,
+                                                    'recovered' => 1028, '1M_pop' => '25', 'total' => 1147 },
+                                       'deaths' => { 'new' => nil, '1M_pop' => '0.04', 'total' => 2 },
+                                       'tests' => { '1M_pop' => '5822', 'total' => 266_856 },
+                                       'day' => '2020-07-30', 'time' => '2020-07-30T12:45:06+00:00' }] }.freeze
+
+  SAMPLE_COVID_STATS_TO_USER = "Hello neza bot, the following is the statics of Covid-19 in Uganda of 2020-07-30
+
+    Continent: Africa
+    Country: Uganda
+    Total population: 45836124
+    New cases: +7
+    Active cases: 117
+    Critical cases: 0
+    Total recovered cases so far: 1028
+    Total infected patients so far: 1147
+    Total deaths so far: 2
+
+That is the update I got you so far.
+I wish you to stay home, and stay safe!".freeze
 end

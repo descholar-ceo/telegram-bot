@@ -55,5 +55,11 @@ describe Formatter do
     it 'When we pass object containing a time to formatter' do
       expect(time_res).to eql(true)
     end
+
+    it 'When we pass object containing a covid stats to formatter' do
+      expect(
+        Formatter.format_response('covid', TestMockData::SAMPLE_COVID_STATS_FROM_INTERNET, 'neza', 'bot')
+      ).to eql(TestMockData::SAMPLE_COVID_STATS_TO_USER)
+    end
   end
 end
