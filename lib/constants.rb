@@ -84,7 +84,7 @@ You give before you get.
                                        'tests' => { '1M_pop' => '5822', 'total' => 266_856 },
                                        'day' => '2020-07-30', 'time' => '2020-07-30T12:45:06+00:00' }] }.freeze
 
-  SAMPLE_COVID_STATS_TO_USER = "Hello neza bot, the following is the statics of Covid-19 in Uganda of 2020-07-30
+  SAMPLE_COVID_STATS_TO_USER = "Hello neza bot, the following is the statistics of Covid-19 in Uganda of 2020-07-30
 
     Continent: Africa
     Country: Uganda

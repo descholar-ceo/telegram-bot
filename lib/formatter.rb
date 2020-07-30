@@ -38,7 +38,7 @@ class Formatter
     critical_cases = cases['critical']
     recovered_cases = cases['recovered']
     total_cases = cases['total']
-    "Hello #{fname} #{lname}, the following is the statics of Covid-19 in #{country} of #{date}\n
+    "Hello #{fname} #{lname}, the following is the statistics of Covid-19 in #{country} of #{date}\n
     Continent: #{continent}
     Country: #{country}
     Total population: #{population}
