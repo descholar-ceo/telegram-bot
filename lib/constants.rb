@@ -33,6 +33,8 @@ module Messages
   HELP_MESSAGE = 'That is the list of help'.freeze
   BAD_COMMAND = 'Sorry! I am not yet familiar with that term, please send me `help` as a message, if you
 think that you forgot how to benefit from me!'.freeze
+  BAD_COVID_MSG = 'Sorry! If you are looking for covid statistics, use this format: covid/name_of_country'
+  BAD_COVID_MSG_SENT_COVID_ONLY = 'Please tell me the country from which you need to get statistics, use this format: covid/name_of_country'
 end
 
 module Configs
