@@ -35,7 +35,9 @@ module Messages
   \n\t\t\t\t=>Covid statistics : send me 'covid/<name_of_country>' replace <name_of_country>
   with the country name you want to read statistics. eg: covid/usa
 
-  I am developed by MUGIRASE Emmanuel, you can contact him on emmamugira@gmail.com".freeze
+  I am developed by MUGIRASE Emmanuel, you can contact him on:
+  Email: emmamugira@gmail.com
+  Twitter: @descholar3".freeze
   HELP_MESSAGE = 'Send me one of the following message, (I call them commands),
   I will reply you with the response specified next to every message:
 
