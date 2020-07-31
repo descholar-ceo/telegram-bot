@@ -1,7 +1,9 @@
 require_relative '../modules/constants'
 # Formatter is in charge of all formatting reponses to user
 class Formatter
-  def self.format_response(
+  def initialiaze; end
+
+  def format_response(
     res_type, res_object = nil, fname = nil, lname = nil, date_time = nil
   )
     case res_type
@@ -18,7 +20,9 @@ class Formatter
     end
   end
 
-  def self.covid_case(res_object, fname, lname)
+  private
+
+  def covid_case(res_object, fname, lname)
     res = res_object['response']
     return Messages::COVID_STATS_NOT_FOUND if res.length.zero? or res.nil?
 
@@ -27,7 +31,7 @@ class Formatter
     format_covid(general, deaths, fname, lname)
   end
 
-  def self.format_covid(general, deaths, fname, lname)
+  def format_covid(general, deaths, fname, lname)
     cases = general['cases']
     date = general['day']
     continent = general['continent']

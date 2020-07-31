@@ -4,44 +4,44 @@ require_relative 'helpers/formatter'
 require_relative 'modules/constants'
 
 # Bot class
-class Bot
+class Bot < Formatter
   def initialize
     Telegram::Bot::Client.run(Configs::BASE_API_KEY) do |bot|
       bot.listen do |message|
-        cases(message, bot)
+        make_bot_works(message, bot)
       end
     end
   end
 
   private
 
-  def cases(message, bot)
+  def make_bot_works(message, bot)
     case message.text.downcase
     when '/start'
       bot.api.send_message(chat_id: message.chat.id, text: Messages::WELCOME_MSG)
     when '/help'
       bot.api.send_message(chat_id: message.chat.id, text: Messages::HELP_MESSAGE)
     else
-      other_cases(message, bot)
+      call_bot_features(message, bot)
     end
   end
 
-  def other_cases(message, bot)
+  def call_bot_features(message, bot)
     return dealing_with_covid(message, bot) if message.text.downcase.start_with? 'covid'
 
     case message.text.downcase
     when 'quote'
       quote_obj = LookUp.new(Configs::PROGRAMMING_QUOTE_API)
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('quote', quote_obj.read).to_s)
+      bot.api.send_message(chat_id: message.chat.id, text: format_response('quote', quote_obj.read).to_s)
     when 'word'
       word_obj = LookUp.new(Configs::WORD_OF_DAY_API)
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response('word', word_obj.read).to_s)
+      bot.api.send_message(chat_id: message.chat.id, text: format_response('word', word_obj.read).to_s)
     when 'time'
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
+      bot.api.send_message(chat_id: message.chat.id, text: format_response(
         'time', nil, message.from.first_name, message.from.last_name, Time.new
       ))
     when 'date'
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
+      bot.api.send_message(chat_id: message.chat.id, text: format_response(
         'date', nil, message.from.first_name, message.from.last_name, Time.new
       ))
     else
@@ -56,7 +56,7 @@ class Bot
       country_arr = message.text.downcase.split '/'
       country = country_arr[1]
       covid_obj = LookUp.new("#{Configs::COVID_API_URL}?country=#{country}", 'covid')
-      bot.api.send_message(chat_id: message.chat.id, text: Formatter.format_response(
+      bot.api.send_message(chat_id: message.chat.id, text: format_response(
         'covid', covid_obj.read, message.from.first_name, message.from.last_name
       ).to_s)
     else

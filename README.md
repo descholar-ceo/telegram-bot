@@ -4,16 +4,17 @@
 
 ## Description
 `telegram-bot` is a chatbot built on top of [Telegram messenger](https://telegram.org/), this means you access it via [Telegram messenger](https://telegram.org/). It is able to help you with the following: 
-- Givingg you statistics of COVID-19 (Corona virus)
+- Giving you statistics of COVID-19 (Corona virus)
 - Giving you word of bravity
 - Telling you programming quote
 - Telling the current time
 - Telling you the current date
 
-## Buit with
+## Built with
 * [Ruby](https://www.ruby-lang.org/en/)
 
 ## Screenshots
+The following screenshots, show you the command and it's response (Command : header, response:screenshot)
 |`/start`|`/help`|`quote`|
 |-|-|-|
 |![](assets/start-command.png)|![](assets/help-commands.png)|![](assets/quote-command.png)|
