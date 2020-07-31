@@ -1,0 +1,28 @@
+name: Tests
+
+on: pull_request
+
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7.x
+      - name: Setup RSpec
+        run: |
+          [ -f Gemfile ] && bundle --deployment
+          gem install --no-document rspec:'~>3.0'
+          gem install dotenv
+          gem install telegram-bot-ruby
+      - name: RSpec Report
+        env:
+          PROGRAMMING_QUOTE_API: ${{ secrets.PROGRAMMING_QUOTE_API }}
+          WORD_OF_DAY_API: ${{ secrets.WORD_OF_DAY_API }}
+          TELEGRAM_BOT_API_TOKEN: ${{ secrets.TELEGRAM_BOT_API_TOKEN }}
+          COVID_API_HOST: ${{ secrets.COVID_API_HOST }}
+          COVID_API_KEY: ${{ secrets.COVID_API_KEY }}
+          COVID_API_URL: ${{ secrets.COVID_API_URL }}
+        run: rspec --force-color --format documentation
