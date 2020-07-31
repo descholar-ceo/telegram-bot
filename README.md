@@ -23,6 +23,11 @@ The following screenshots, show you the command and it's response (Command : hea
 |-|-|-|
 ![](assets/word-command.png)|![](assets/covid-command.png)|![](assets/date-command.png)
 
+## Usage
+This bot can be used in two ways:
+- Go in your telegram account, and search `@neza_connect_bot` and hit `START` button or simple access it via this link [nezaBot](t.me/neza_connect_bot)
+Or
+- Follow the below `Setup` process to install it on your local machine
 
 ## Setup
 To be able to use this bot follow the following steps
@@ -53,7 +58,7 @@ To be able to setup and run this project locally, you should have the following
 
 8. Run `bundle install` => To install all gems
 
-### Usage
+### Start it
 1. Run `bin/main.rb` => To start your `telegram-bot`. At this point you should see in your terminal a window which looks like the following on the screenshot:
 ![](assets/telegram-bot-terminal-screen.png)
 2. Now your bot is live and is able to follow the commands you give it, go in your telegram messenger, and look for your bot, => the bot name you provided to the botfather on step 4.
