@@ -2,19 +2,19 @@
 ![Linters](https://github.com/descholar-ceo/telegram-bot/workflows/Linters/badge.svg)  ![Tests](https://github.com/descholar-ceo/telegram-bot/workflows/Tests/badge.svg)  [![Gem Version](https://badge.fury.io/rb/telegram-bot-ruby.svg)](https://badge.fury.io/rb/telegram-bot-ruby)
 
 
-## Vision
-These days, it is very easy now to access to information. Nowadays, people are busy, they have a lot of schedulings, such as meetings to attend, the daily tasks that they need to complete, and at the same time, they need to be connected with the world via information or news. The main problem here is that some people who lack time to go on the internet to research or they need some words of `encouragement`, or some `quotes`, and of course to know the current status of the famous `Covid-19`.
-
-Here, `telegram-bot` comes in as a solution. It provides a very easy way of accessing to a source of information, you just need to tell it what you want, and it will handle other works behind the curtains, and gives your appropriate answer from the internet.
-
 ## Description
-`telegram-bot` is a chatbot built on top of [Telegram messenger](https://telegram.org/), this means you access it via [Telegram messenger](https://telegram.org/). It is built to make your life easy, don't spend your time looking for links where you can find current **COVID-19 statistics**, with a single message you send it via your **messenger chat**, it will pull information from online and brings you the solution.
+`telegram-bot` is a chatbot built on top of [Telegram messenger](https://telegram.org/), this means you access it via [Telegram messenger](https://telegram.org/). It is able to help you with the following: 
+- Givingg you statistics of COVID-19 (Corona virus)
+- Giving you word of bravity
+- Telling you programming quote
+- Telling the current time
+- Telling you the current date
 
 ## Buit with
 * [Ruby](https://www.ruby-lang.org/en/)
 
 ## Screenshots
-|`/stat`|`/help`|`quote`|
+|`/start`|`/help`|`quote`|
 |-|-|-|
 |![](assets/start-command.png)|![](assets/help-commands.png)|![](assets/quote-command.png)|
 
