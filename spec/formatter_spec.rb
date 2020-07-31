@@ -3,7 +3,7 @@ require_relative '../lib/helpers/formatter'
 require_relative '../lib/modules/constants'
 
 describe Formatter do
-  let(:formatter){ Formatter.new }
+  let(:formatter) { Formatter.new }
   let(:word_res) do
     formatter.format_response('word', TestMockData::SAMPLE_WORD_FROM_INTERNET) ==
       TestMockData::SAMPLE_WORD_TO_USER
