@@ -23,11 +23,8 @@ The following screenshots, show you the command and it's response (Command : hea
 |-|-|-|
 ![](assets/word-command.png)|![](assets/covid-command.png)|![](assets/date-command.png)
 
-## Usage
-This bot can be used in two ways:
-- Go in your telegram account, and search `@neza_connect_bot` and hit `START` button or simple access it via this link [nezaBot](t.me/neza_connect_bot)
-Or
-- Follow the below `Setup` process to install it on your local machine
+## Deployment
+- Go in your telegram account, and search `@neza_connect_bot` and hit `START` button or simply access it via this link [nezaBot](t.me/neza_connect_bot)
 
 ## Setup
 To be able to use this bot follow the following steps
