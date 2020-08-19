@@ -1,7 +1,6 @@
 require_relative '../modules/constants'
 # Formatter is in charge of all formatting reponses to user
 class Formatter
-
   def format_response(
     res_type, res_object = nil, fname = nil, lname = nil, date_time = nil
   )
